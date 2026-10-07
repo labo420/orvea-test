@@ -1,26 +1,26 @@
 :root {
-  --bg: #F4F7FF;
+  --bg: #E8F8FF;
   --surface: #FFFFFF;
-  --surface-soft: #F8F4FF;
-  --border: #D9D6F7;
+  --surface-soft: #F4EDFF;
+  --border: #CFC3FF;
 
-  --text: #0B1020;
-  --muted: #596174;
-  --subtle: #8A91A6;
+  --text: #0A1026;
+  --muted: #5C6380;
+  --subtle: #8A91AD;
 
   --blue: #1877F2;
   --blue-soft: #DCEBFF;
 
-  --green: #00C853;
-  --green-soft: #D9FFE9;
+  --green: #00D084;
+  --green-soft: #D8FFE9;
 
-  --amber: #FFB300;
-  --amber-soft: #FFF1B8;
+  --amber: #FFB000;
+  --amber-soft: #FFF0B8;
 
-  --red: #FF2D55;
-  --red-soft: #FFE0E8;
+  --red: #FF2F6D;
+  --red-soft: #FFE0EA;
 
-  --purple: #8A2BE2;
+  --purple: #8B2CFF;
   --purple-soft: #EBDDFF;
 
   --shadow-sm:
@@ -83,7 +83,7 @@ textarea:focus-visible {
 
   width: var(--sidebar-width);
 
-  background: #0e1117;
+  background: #16002E;
   color: #fff;
 
   display: flex;
@@ -154,7 +154,7 @@ textarea:focus-visible {
   font-size: 12px;
   font-weight: 800;
 
-  background: #242934;
+  background: #2B0B55;
 }
 
 .workspace-info {
@@ -245,7 +245,7 @@ textarea:focus-visible {
   border-radius: 999px;
 
   color: #9ba1ad;
-  background: #1d212a;
+  background: #331064;
 
   font-size: 10px;
 }
@@ -290,7 +290,7 @@ textarea:focus-visible {
 
   border-radius: 50%;
 
-  background: #253244;
+  background: #3C0A72;
   color: #fff;
 
   font-size: 10px;
@@ -379,7 +379,7 @@ textarea:focus-visible {
 
   padding: 0 10px;
 
-  background: #fff;
+  background: var(--surface);
   border: 1px solid var(--border);
 
   border-radius: 9px;
@@ -392,7 +392,7 @@ textarea:focus-visible {
 }
 
 .search-button kbd {
-  background: #f2f4f7;
+  background: #E6F7FF;
 
   border: 1px solid var(--border);
 
@@ -410,7 +410,7 @@ textarea:focus-visible {
 
   border-radius: 9px;
 
-  background: #fff;
+  background: var(--surface);
   border: 1px solid var(--border);
 
   cursor: pointer;
@@ -434,7 +434,7 @@ textarea:focus-visible {
 
 .avatar-button {
   border-radius: 50%;
-  background: #162135;
+  background: #2D0A5C;
 
   border: none;
 
@@ -553,7 +553,7 @@ h1 {
 
   border-radius: 9px;
 
-  background: #fff;
+  background: var(--surface);
   color: var(--text);
 
   border: 1px solid var(--border);
@@ -563,7 +563,7 @@ h1 {
 }
 
 .outline-button:hover {
-  background: #f8f9fb;
+  background: #F2EBFF;
 }
 
 .outline-button.small {
@@ -596,7 +596,7 @@ h1 {
 .attention-panel {
   padding: 22px;
 
-  background: #fff;
+  background: var(--surface);
 
   border: 1px solid var(--border);
   border-radius: 17px;
@@ -648,7 +648,7 @@ h1 {
 
 .attention-card.critical {
   border-color: #f3c9cf;
-  background: #fffafb;
+  background: #FFF0F7;
 }
 
 .attention-top {
@@ -726,7 +726,7 @@ h1 {
 
   border-radius: 8px;
 
-  background: #fff1f3;
+  background: #FFE7EF;
   color: #a72335;
 
   font-size: 9px;
@@ -734,7 +734,7 @@ h1 {
 }
 
 .impact-line.neutral {
-  background: #f2f4f7;
+  background: #E6F7FF;
   color: #626a76;
 }
 
@@ -791,7 +791,7 @@ h1 {
   border: 1px solid var(--border);
   border-radius: 7px;
 
-  background: #fff;
+  background: var(--surface);
   color: var(--text);
 
   font-size: 9px;
@@ -814,7 +814,7 @@ h1 {
 .metric-card {
   padding: 17px;
 
-  background: #fff;
+  background: var(--surface);
 
   border: 1px solid var(--border);
   border-radius: 13px;
@@ -891,7 +891,7 @@ h1 {
 .project-card {
   padding: 15px;
 
-  background: #fff;
+  background: var(--surface);
 
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -941,7 +941,7 @@ h1 {
 
 .project-icon.black,
 .large-project-logo.black {
-  background: #161b23;
+  background: #20003F;
   color: white;
 }
 
@@ -958,7 +958,7 @@ h1 {
 }
 
 .project-icon.orange {
-  background: #fff2e5;
+  background: #FFF0D1;
   color: #b66b18;
 }
 
@@ -1008,7 +1008,7 @@ h1 {
 
   overflow: hidden;
 
-  background: #edf0f3;
+  background: #F0E9FF;
   border-radius: 999px;
 }
 
@@ -1049,7 +1049,7 @@ h1 {
 
   border-radius: 50%;
 
-  background: #dce4ef;
+  background: #DCEBFF;
   border: 2px solid #fff;
 
   color: #47505e;
@@ -1059,15 +1059,15 @@ h1 {
 }
 
 .stacked-avatars span:nth-child(2) {
-  background: #eadcf3;
+  background: #EBDDFF;
 }
 
 .stacked-avatars span:nth-child(3) {
-  background: #d8eee6;
+  background: #D8FFE9;
 }
 
 .stacked-avatars span:nth-child(4) {
-  background: #f0f1f3;
+  background: #EAF8FF;
 }
 
 .project-task-count {
@@ -1082,7 +1082,7 @@ h1 {
 .today-list {
   border: 1px solid var(--border);
   border-radius: 13px;
-  background: white;
+  background: var(--surface);
 
   overflow: hidden;
 }
@@ -1111,7 +1111,7 @@ h1 {
   border: 1px solid #cfd4dc;
   border-radius: 5px;
 
-  background: white;
+  background: var(--surface);
 }
 
 .today-main {
@@ -1165,7 +1165,7 @@ h1 {
 
   border-radius: 8px;
 
-  background: #fff;
+  background: var(--surface);
   border: 1px solid var(--border);
 
   color: var(--muted);
@@ -1192,7 +1192,7 @@ h1 {
 .large-project-card {
   padding: 20px;
 
-  background: white;
+  background: var(--surface);
 
   border: 1px solid var(--border);
   border-radius: 16px;
@@ -1329,7 +1329,7 @@ h1 {
   border: 1px solid var(--border);
   border-radius: 15px;
 
-  background: white;
+  background: var(--surface);
 }
 
 .change-card.urgent {
@@ -1354,7 +1354,7 @@ h1 {
 }
 
 .neutral-icon {
-  background: #f2f4f7;
+  background: #E6F7FF;
   color: #69717d;
 }
 
@@ -1395,7 +1395,7 @@ h1 {
 
   border-radius: 9px;
 
-  background: #f8f9fb;
+  background: #F2EBFF;
 
   border: 1px solid #edf0f4;
 }
@@ -1456,7 +1456,7 @@ h1 {
 
   padding: 16px;
 
-  background: white;
+  background: var(--surface);
 
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -1470,7 +1470,7 @@ h1 {
 
   border-radius: 999px;
 
-  background: #ccd2da;
+  background: #D6CCFF;
 }
 
 .waiting-indicator.amber {
@@ -1515,7 +1515,7 @@ h1 {
 
   padding: 21px;
 
-  background: #10141b;
+  background: #17002F;
   color: white;
 
   border-radius: 15px;
@@ -1580,7 +1580,7 @@ h1 {
 
   padding: 14px;
 
-  background: #fbfcfd;
+  background: #FFF0FA;
 
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -1609,7 +1609,7 @@ h1 {
 
   padding: 12px;
 
-  background: #fff;
+  background: var(--surface);
 
   border: 1px solid var(--border);
   border-radius: 10px;
@@ -1646,7 +1646,7 @@ h1 {
 }
 
 .timeline-card {
-  background: white;
+  background: var(--surface);
 
   border: 1px solid var(--border);
   border-radius: 15px;
@@ -1673,7 +1673,7 @@ h1 {
 
   border-radius: 7px;
 
-  background: #f5f6f8;
+  background: #F3ECFF;
   color: #69717e;
 
   cursor: pointer;
@@ -1787,7 +1787,7 @@ h1 {
 
   padding: 18px;
 
-  background: white;
+  background: var(--surface);
 
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -1882,7 +1882,7 @@ h1 {
 
   padding: 0 11px;
 
-  background: white;
+  background: var(--surface);
 
   border: 1px solid var(--border);
   border-radius: 9px;
@@ -1904,7 +1904,7 @@ h1 {
 }
 
 .document-table {
-  background: white;
+  background: var(--surface);
 
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -1935,7 +1935,7 @@ h1 {
 }
 
 .document-row.header {
-  background: #fafbfc;
+  background: var(--surface-soft);
 
   color: #8a919d;
 
@@ -1996,13 +1996,13 @@ h1 {
 
   overflow: hidden;
 
-  background: white;
+  background: var(--surface);
 }
 
 .conversation-list {
   border-right: 1px solid var(--border);
 
-  background: #fbfcfd;
+  background: #FFF0FA;
 }
 
 .conversation {
@@ -2017,11 +2017,11 @@ h1 {
 }
 
 .conversation.active {
-  background: white;
+  background: var(--surface);
 }
 
 .conversation:hover {
-  background: white;
+  background: var(--surface);
 }
 
 .conversation-avatar {
@@ -2035,7 +2035,7 @@ h1 {
 
   border-radius: 9px;
 
-  background: #202732;
+  background: #2A0754;
 
   color: white;
 
@@ -2160,7 +2160,7 @@ h1 {
 
   padding: 25px;
 
-  background: #fcfcfd;
+  background: #FFF2FA;
 
   overflow: auto;
 }
@@ -2183,7 +2183,7 @@ h1 {
 
   padding: 15px;
 
-  background: white;
+  background: var(--surface);
 
   border: 1px solid var(--border);
   border-radius: 12px;
@@ -2228,7 +2228,7 @@ h1 {
   border: 1px solid #dceaff;
   border-radius: 11px;
 
-  background: #f7faff;
+  background: #EAF7FF;
 }
 
 .ai-insight-icon {
@@ -2268,7 +2268,7 @@ h1 {
 
   border-top: 1px solid var(--border);
 
-  background: white;
+  background: var(--surface);
 }
 
 .reply-box textarea {
@@ -2315,7 +2315,7 @@ h1 {
   display: flex;
   flex-direction: column;
 
-  background: white;
+  background: var(--surface);
 
   border: 1px solid var(--border);
   border-radius: 17px;
@@ -2372,7 +2372,7 @@ h1 {
 
   border-radius: 7px;
 
-  background: #f3f5f7;
+  background: #F6EFFF;
 
   cursor: pointer;
 }
@@ -2440,7 +2440,7 @@ h1 {
 
   border-radius: 9px;
 
-  background: #fafbfc;
+  background: var(--surface-soft);
 
   border: 1px solid var(--border);
 
@@ -2452,7 +2452,7 @@ h1 {
 }
 
 .suggested-prompts button:hover {
-  background: #f3f6fa;
+  background: #E9F4FF;
   border-color: #d8e6fa;
 }
 
@@ -2520,7 +2520,7 @@ h1 {
 .command-modal {
   width: min(610px, calc(100% - 30px));
 
-  background: white;
+  background: var(--surface);
 
   border: 1px solid var(--border);
   border-radius: 14px;
@@ -2556,7 +2556,7 @@ h1 {
 .command-input kbd {
   color: var(--subtle);
 
-  background: #f3f4f6;
+  background: #F4ECFF;
 
   padding: 4px 5px;
 
@@ -2605,7 +2605,7 @@ h1 {
 }
 
 .command-results button:hover {
-  background: #f4f6f8;
+  background: #EAF7FF;
 }
 
 .command-project {
@@ -2622,7 +2622,7 @@ h1 {
 }
 
 .command-project.black {
-  background: #151a21;
+  background: #1D0039;
   color: white;
 }
 
@@ -2687,7 +2687,7 @@ h1 {
 
     border-radius: 8px;
 
-    background: #252b35;
+    background: #31085F;
     color: white;
 
     cursor: pointer;
@@ -2718,7 +2718,7 @@ h1 {
 
     border-radius: 8px;
 
-    background: white;
+    background: var(--surface);
     border: 1px solid var(--border);
 
     cursor: pointer;
