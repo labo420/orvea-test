@@ -1,0 +1,1867 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+  <title>Orvea — Operational Intelligence</title>
+
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link
+    href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap"
+    rel="stylesheet"
+  />
+
+  <link rel="stylesheet" href="style.css" />
+</head>
+
+<body>
+
+  <!-- Mobile overlay -->
+  <div id="mobileOverlay" class="mobile-overlay"></div>
+
+  <!-- Sidebar -->
+  <aside id="sidebar" class="sidebar">
+
+    <div class="sidebar-top">
+
+      <div class="brand">
+        <div class="brand-mark">O</div>
+
+        <div class="brand-name">
+          <span>ORV</span><strong>EA</strong>
+        </div>
+      </div>
+
+      <button id="closeSidebar" class="mobile-close">×</button>
+
+      <div class="workspace-selector">
+        <div class="workspace-avatar">L</div>
+
+        <div class="workspace-info">
+          <strong>Lumen Events</strong>
+          <span>Personal workspace</span>
+        </div>
+
+        <span class="chevron">⌄</span>
+      </div>
+
+      <nav class="main-nav">
+
+        <button class="nav-item active" data-view="dashboard">
+          <span class="nav-icon">⌂</span>
+          <span>Dashboard</span>
+        </button>
+
+        <button class="nav-item" data-view="projects">
+          <span class="nav-icon">▦</span>
+          <span>Projects</span>
+          <span class="nav-count">4</span>
+        </button>
+
+        <button class="nav-item" data-view="inbox">
+          <span class="nav-icon">✉</span>
+          <span>Inbox</span>
+          <span class="nav-count accent">7</span>
+        </button>
+
+        <button class="nav-item" data-view="changes">
+          <span class="nav-icon">↯</span>
+          <span>What changed?</span>
+          <span class="nav-count accent">3</span>
+        </button>
+
+        <button class="nav-item" data-view="waiting">
+          <span class="nav-icon">◔</span>
+          <span>What am I waiting for?</span>
+          <span class="nav-count">5</span>
+        </button>
+
+        <button class="nav-item" data-view="tasks">
+          <span class="nav-icon">✓</span>
+          <span>Tasks</span>
+        </button>
+
+        <button class="nav-item" data-view="timeline">
+          <span class="nav-icon">◷</span>
+          <span>Timeline</span>
+        </button>
+
+        <button class="nav-item" data-view="decisions">
+          <span class="nav-icon">◇</span>
+          <span>Decision log</span>
+        </button>
+
+        <button class="nav-item" data-view="documents">
+          <span class="nav-icon">□</span>
+          <span>Documents</span>
+        </button>
+
+      </nav>
+    </div>
+
+    <div class="sidebar-bottom">
+
+      <button class="nav-item" data-view="search">
+        <span class="nav-icon">⌕</span>
+        <span>Search</span>
+        <span class="shortcut">⌘ K</span>
+      </button>
+
+      <button class="nav-item assistant-trigger">
+        <span class="nav-icon ai-symbol">✦</span>
+        <span>Orvea Assistant</span>
+      </button>
+
+      <div class="user-card">
+        <div class="user-avatar">AM</div>
+        <div class="user-info">
+          <strong>Anna Martini</strong>
+          <span>Admin</span>
+        </div>
+        <span class="more">•••</span>
+      </div>
+
+    </div>
+  </aside>
+
+
+  <!-- Main -->
+  <main class="main">
+
+    <!-- Topbar -->
+    <header class="topbar">
+
+      <button id="openSidebar" class="menu-button">☰</button>
+
+      <div class="breadcrumbs">
+        <span>Workspace</span>
+        <span>/</span>
+        <strong id="breadcrumbCurrent">Dashboard</strong>
+      </div>
+
+      <div class="topbar-actions">
+
+        <button id="globalSearchButton" class="search-button">
+          <span>⌕</span>
+          <span>Search everything</span>
+          <kbd>⌘ K</kbd>
+        </button>
+
+        <button class="icon-button notification-button">
+          ♢
+          <span class="notification-dot"></span>
+        </button>
+
+        <button class="avatar-button">AM</button>
+
+      </div>
+
+    </header>
+
+
+    <!-- Content -->
+    <div class="content">
+
+
+      <!-- ================= DASHBOARD ================= -->
+      <section id="view-dashboard" class="view active-view">
+
+        <div class="page-heading">
+
+          <div>
+            <div class="eyebrow">WEDNESDAY · 7 OCTOBER</div>
+
+            <h1>Good morning, Anna.</h1>
+
+            <p class="page-description">
+              Here’s what needs your attention across your workspace.
+            </p>
+          </div>
+
+          <button class="primary-button">
+            + New project
+          </button>
+
+        </div>
+
+
+        <!-- Attention -->
+        <section class="attention-panel">
+
+          <div class="panel-title-row">
+
+            <div>
+              <h2>Needs your attention</h2>
+              <p>3 things changed since you last checked.</p>
+            </div>
+
+            <button class="text-button" data-view-target="changes">
+              View all →
+            </button>
+
+          </div>
+
+
+          <div class="attention-grid">
+
+            <article class="attention-card critical">
+
+              <div class="attention-top">
+                <span class="status-pill red">ACTION REQUIRED</span>
+                <span class="time-label">12 min ago</span>
+              </div>
+
+              <h3>Venue delivery window changed</h3>
+
+              <p>
+                Villa Serena moved supplier access from
+                <strong>09:00</strong> to <strong>10:30</strong>.
+              </p>
+
+              <div class="impact-line">
+                <span class="impact-icon">↯</span>
+
+                <span>
+                  May impact setup timeline and catering arrival.
+                </span>
+              </div>
+
+              <div class="card-footer">
+                <div class="source">
+                  <div class="mini-avatar">VS</div>
+                  Villa Serena
+                </div>
+
+                <button class="small-button">
+                  Review
+                </button>
+              </div>
+
+            </article>
+
+
+            <article class="attention-card">
+
+              <div class="attention-top">
+                <span class="status-pill amber">WAITING</span>
+                <span class="time-label">Yesterday</span>
+              </div>
+
+              <h3>Florist hasn't confirmed the proposal</h3>
+
+              <p>
+                You requested approval for the revised floral
+                arrangement on Monday.
+              </p>
+
+              <div class="impact-line neutral">
+                <span class="impact-icon">◔</span>
+
+                <span>
+                  Follow-up recommended today.
+                </span>
+              </div>
+
+              <div class="card-footer">
+                <div class="source">
+                  <div class="mini-avatar purple">LF</div>
+                  La Fleur
+                </div>
+
+                <button class="small-button">
+                  Follow up
+                </button>
+              </div>
+
+            </article>
+
+
+            <article class="attention-card">
+
+              <div class="attention-top">
+                <span class="status-pill blue">DECISION</span>
+                <span class="time-label">2 days ago</span>
+              </div>
+
+              <h3>Menu selection still open</h3>
+
+              <p>
+                The couple hasn't selected the vegetarian
+                starter for the final menu.
+              </p>
+
+              <div class="impact-line neutral">
+                <span class="impact-icon">◇</span>
+
+                <span>
+                  Catering needs confirmation by Friday.
+                </span>
+              </div>
+
+              <div class="card-footer">
+                <div class="source">
+                  <div class="mini-avatar green">MC</div>
+                  Marco & Chiara
+                </div>
+
+                <button class="small-button">
+                  Open
+                </button>
+              </div>
+
+            </article>
+
+          </div>
+
+        </section>
+
+
+        <!-- Metrics -->
+        <section class="metric-grid">
+
+          <div class="metric-card">
+            <span class="metric-label">Active projects</span>
+            <strong>4</strong>
+            <span class="metric-meta">2 events this month</span>
+          </div>
+
+          <div class="metric-card">
+            <span class="metric-label">Open tasks</span>
+            <strong>18</strong>
+            <span class="metric-meta positive">6 due this week</span>
+          </div>
+
+          <div class="metric-card">
+            <span class="metric-label">Waiting on others</span>
+            <strong>5</strong>
+            <span class="metric-meta">2 overdue</span>
+          </div>
+
+          <div class="metric-card">
+            <span class="metric-label">Upcoming deadlines</span>
+            <strong>7</strong>
+            <span class="metric-meta">Next: Friday</span>
+          </div>
+
+        </section>
+
+
+        <!-- Projects -->
+        <section class="dashboard-section">
+
+          <div class="section-heading">
+
+            <div>
+              <h2>Active projects</h2>
+              <p>Your most recent work.</p>
+            </div>
+
+            <button class="text-button" data-view-target="projects">
+              View all →
+            </button>
+
+          </div>
+
+
+          <div class="project-grid">
+
+            <article class="project-card" data-project="aurora">
+
+              <div class="project-card-top">
+
+                <div class="project-icon black">
+                  A
+                </div>
+
+                <span class="project-status">IN PROGRESS</span>
+
+              </div>
+
+              <h3>Giulia & Lorenzo</h3>
+
+              <p>Villa Balbianello · 24 May 2027</p>
+
+              <div class="project-progress">
+                <div class="progress-bar">
+                  <span style="width: 68%"></span>
+                </div>
+
+                <span>68%</span>
+              </div>
+
+              <div class="project-footer">
+
+                <div class="stacked-avatars">
+                  <span>GB</span>
+                  <span>VS</span>
+                  <span>LF</span>
+                  <span>+2</span>
+                </div>
+
+                <span class="project-task-count">8 tasks</span>
+
+              </div>
+
+            </article>
+
+
+            <article class="project-card">
+
+              <div class="project-card-top">
+
+                <div class="project-icon blue">
+                  M
+                </div>
+
+                <span class="project-status blue-text">PLANNING</span>
+
+              </div>
+
+              <h3>Marco & Chiara</h3>
+
+              <p>Villa d'Este · 14 June 2027</p>
+
+              <div class="project-progress">
+                <div class="progress-bar">
+                  <span style="width: 42%"></span>
+                </div>
+
+                <span>42%</span>
+              </div>
+
+              <div class="project-footer">
+
+                <div class="stacked-avatars">
+                  <span>MC</span>
+                  <span>VE</span>
+                  <span>LF</span>
+                </div>
+
+                <span class="project-task-count">5 tasks</span>
+
+              </div>
+
+            </article>
+
+
+            <article class="project-card">
+
+              <div class="project-card-top">
+
+                <div class="project-icon purple">
+                  S
+                </div>
+
+                <span class="project-status purple-text">PLANNING</span>
+
+              </div>
+
+              <h3>Sofia & Matteo</h3>
+
+              <p>Lake Como · 18 September 2027</p>
+
+              <div class="project-progress">
+                <div class="progress-bar">
+                  <span style="width: 24%"></span>
+                </div>
+
+                <span>24%</span>
+
+              </div>
+
+              <div class="project-footer">
+
+                <div class="stacked-avatars">
+                  <span>SM</span>
+                  <span>VC</span>
+                </div>
+
+                <span class="project-task-count">3 tasks</span>
+
+              </div>
+
+            </article>
+
+
+            <article class="project-card muted-project">
+
+              <div class="project-card-top">
+
+                <div class="project-icon orange">
+                  L
+                </div>
+
+                <span class="project-status">DRAFT</span>
+
+              </div>
+
+              <h3>Laura & Davide</h3>
+
+              <p>Location to be confirmed</p>
+
+              <div class="project-progress">
+                <div class="progress-bar">
+                  <span style="width: 8%"></span>
+                </div>
+
+                <span>8%</span>
+
+              </div>
+
+              <div class="project-footer">
+
+                <span class="project-task-count">Setup stage</span>
+
+              </div>
+
+            </article>
+
+          </div>
+
+        </section>
+
+
+        <!-- Today -->
+        <section class="dashboard-section">
+
+          <div class="section-heading">
+
+            <div>
+              <h2>Today</h2>
+              <p>Your next actions.</p>
+            </div>
+
+            <button class="text-button" data-view-target="tasks">
+              Open tasks →
+            </button>
+
+          </div>
+
+
+          <div class="today-list">
+
+            <div class="today-row">
+
+              <div class="today-check"></div>
+
+              <div class="today-main">
+                <strong>Confirm revised venue access time</strong>
+                <span>Giulia & Lorenzo · Due today</span>
+              </div>
+
+              <span class="priority high">High</span>
+
+            </div>
+
+            <div class="today-row">
+
+              <div class="today-check"></div>
+
+              <div class="today-main">
+                <strong>Follow up with La Fleur</strong>
+                <span>Giulia & Lorenzo · Due today</span>
+              </div>
+
+              <span class="priority medium">Medium</span>
+
+            </div>
+
+            <div class="today-row">
+
+              <div class="today-check"></div>
+
+              <div class="today-main">
+                <strong>Send menu confirmation to catering</strong>
+                <span>Marco & Chiara · Due today</span>
+              </div>
+
+              <span class="priority medium">Medium</span>
+
+            </div>
+
+          </div>
+
+        </section>
+
+      </section>
+
+
+
+      <!-- ================= PROJECTS ================= -->
+      <section id="view-projects" class="view">
+
+        <div class="page-heading">
+
+          <div>
+            <div class="eyebrow">WORKSPACE</div>
+            <h1>Projects</h1>
+            <p class="page-description">
+              Everything you're working on, in one place.
+            </p>
+          </div>
+
+          <button class="primary-button">+ New project</button>
+
+        </div>
+
+
+        <div class="filters">
+
+          <button class="filter active">All projects</button>
+          <button class="filter">Planning</button>
+          <button class="filter">In progress</button>
+          <button class="filter">Draft</button>
+
+        </div>
+
+
+        <div class="projects-large-grid">
+
+          <article class="large-project-card">
+
+            <div class="large-project-header">
+
+              <div class="large-project-logo black">G</div>
+
+              <div>
+                <span class="project-status">IN PROGRESS</span>
+                <h2>Giulia & Lorenzo</h2>
+                <p>Villa Balbianello · 24 May 2027</p>
+              </div>
+
+              <button class="more-button">•••</button>
+
+            </div>
+
+            <div class="large-progress">
+
+              <div class="large-progress-top">
+                <span>Project progress</span>
+                <strong>68%</strong>
+              </div>
+
+              <div class="progress-bar large">
+                <span style="width:68%"></span>
+              </div>
+
+            </div>
+
+            <div class="project-stats-row">
+              <div>
+                <span>18</span>
+                <small>Tasks</small>
+              </div>
+
+              <div>
+                <span>42</span>
+                <small>Messages</small>
+              </div>
+
+              <div>
+                <span>7</span>
+                <small>Decisions</small>
+              </div>
+            </div>
+
+            <div class="large-project-bottom">
+              <div class="stacked-avatars">
+                <span>GB</span>
+                <span>VS</span>
+                <span>LF</span>
+                <span>+2</span>
+              </div>
+
+              <button class="outline-button">
+                Open project
+              </button>
+            </div>
+
+          </article>
+
+
+          <article class="large-project-card">
+
+            <div class="large-project-header">
+
+              <div class="large-project-logo blue">M</div>
+
+              <div>
+                <span class="project-status blue-text">PLANNING</span>
+                <h2>Marco & Chiara</h2>
+                <p>Villa d'Este · 14 June 2027</p>
+              </div>
+
+              <button class="more-button">•••</button>
+
+            </div>
+
+            <div class="large-progress">
+
+              <div class="large-progress-top">
+                <span>Project progress</span>
+                <strong>42%</strong>
+              </div>
+
+              <div class="progress-bar large">
+                <span style="width:42%"></span>
+              </div>
+
+            </div>
+
+            <div class="project-stats-row">
+              <div>
+                <span>11</span>
+                <small>Tasks</small>
+              </div>
+
+              <div>
+                <span>26</span>
+                <small>Messages</small>
+              </div>
+
+              <div>
+                <span>4</span>
+                <small>Decisions</small>
+              </div>
+            </div>
+
+            <div class="large-project-bottom">
+              <div class="stacked-avatars">
+                <span>MC</span>
+                <span>VE</span>
+                <span>LF</span>
+              </div>
+
+              <button class="outline-button">
+                Open project
+              </button>
+            </div>
+
+          </article>
+
+
+          <article class="large-project-card">
+
+            <div class="large-project-header">
+
+              <div class="large-project-logo purple">S</div>
+
+              <div>
+                <span class="project-status purple-text">PLANNING</span>
+                <h2>Sofia & Matteo</h2>
+                <p>Lake Como · 18 September 2027</p>
+              </div>
+
+              <button class="more-button">•••</button>
+
+            </div>
+
+            <div class="large-progress">
+
+              <div class="large-progress-top">
+                <span>Project progress</span>
+                <strong>24%</strong>
+              </div>
+
+              <div class="progress-bar large">
+                <span style="width:24%"></span>
+              </div>
+
+            </div>
+
+            <div class="project-stats-row">
+              <div>
+                <span>6</span>
+                <small>Tasks</small>
+              </div>
+
+              <div>
+                <span>15</span>
+                <small>Messages</small>
+              </div>
+
+              <div>
+                <span>2</span>
+                <small>Decisions</small>
+              </div>
+            </div>
+
+            <div class="large-project-bottom">
+              <div class="stacked-avatars">
+                <span>SM</span>
+                <span>VC</span>
+              </div>
+
+              <button class="outline-button">
+                Open project
+              </button>
+            </div>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ================= CHANGES ================= -->
+      <section id="view-changes" class="view">
+
+        <div class="page-heading">
+
+          <div>
+            <div class="eyebrow">INTELLIGENCE</div>
+            <h1>What changed?</h1>
+            <p class="page-description">
+              Important changes detected across your projects.
+            </p>
+          </div>
+
+          <button class="outline-button">Filter</button>
+
+        </div>
+
+
+        <div class="change-list">
+
+          <article class="change-card urgent">
+
+            <div class="change-icon">↯</div>
+
+            <div class="change-content">
+
+              <div class="change-meta">
+                <span class="status-pill red">HIGH IMPACT</span>
+                <span>12 min ago · Giulia & Lorenzo</span>
+              </div>
+
+              <h2>Villa Serena changed supplier access</h2>
+
+              <p>
+                Access is now available from
+                <strong>10:30</strong> instead of
+                <strong>09:00</strong>.
+              </p>
+
+              <div class="impact-box">
+
+                <div class="impact-box-title">
+                  <span>Potential impact</span>
+                  <span class="confidence">92% confidence</span>
+                </div>
+
+                <p>
+                  Catering setup was scheduled for 09:30.
+                  This creates a potential 1h overlap.
+                </p>
+
+              </div>
+
+              <div class="change-actions">
+                <button class="primary-button small">
+                  Review impact
+                </button>
+
+                <button class="ghost-button">
+                  View source
+                </button>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="change-card">
+
+            <div class="change-icon neutral-icon">✉</div>
+
+            <div class="change-content">
+
+              <div class="change-meta">
+                <span class="status-pill blue">UPDATE</span>
+                <span>Yesterday · Marco & Chiara</span>
+              </div>
+
+              <h2>Couple updated guest count</h2>
+
+              <p>
+                Expected guests changed from
+                <strong>112</strong> to <strong>126</strong>.
+              </p>
+
+              <div class="impact-box">
+
+                <div class="impact-box-title">
+                  <span>Potential impact</span>
+                  <span class="confidence">88% confidence</span>
+                </div>
+
+                <p>
+                  Seating plan and catering quantities may need
+                  to be reviewed.
+                </p>
+
+              </div>
+
+              <div class="change-actions">
+                <button class="primary-button small">
+                  Review impact
+                </button>
+
+                <button class="ghost-button">
+                  View source
+                </button>
+              </div>
+
+            </div>
+
+          </article>
+
+
+          <article class="change-card">
+
+            <div class="change-icon neutral-icon">◇</div>
+
+            <div class="change-content">
+
+              <div class="change-meta">
+                <span class="status-pill purple">DECISION</span>
+                <span>2 days ago · Sofia & Matteo</span>
+              </div>
+
+              <h2>Couple selected live music package</h2>
+
+              <p>
+                Decision recorded in the project workspace.
+              </p>
+
+              <div class="change-actions">
+                <button class="outline-button small">
+                  Open decision
+                </button>
+
+                <button class="ghost-button">
+                  View source
+                </button>
+              </div>
+
+            </div>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ================= WAITING ================= -->
+      <section id="view-waiting" class="view">
+
+        <div class="page-heading">
+
+          <div>
+            <div class="eyebrow">FOLLOW-UPS</div>
+            <h1>What am I waiting for?</h1>
+            <p class="page-description">
+              Requests and confirmations that are still open.
+            </p>
+          </div>
+
+        </div>
+
+
+        <div class="waiting-layout">
+
+          <div class="waiting-main">
+
+            <div class="waiting-card overdue">
+
+              <div class="waiting-indicator"></div>
+
+              <div class="waiting-content">
+
+                <span class="status-pill red">OVERDUE · 2 DAYS</span>
+
+                <h2>Floral proposal approval</h2>
+
+                <p>
+                  Waiting for La Fleur to confirm the revised
+                  arrangement and price.
+                </p>
+
+                <div class="waiting-source">
+                  <div class="mini-avatar purple">LF</div>
+                  <span>La Fleur · Giulia & Lorenzo</span>
+                </div>
+
+              </div>
+
+              <button class="small-button">
+                Follow up
+              </button>
+
+            </div>
+
+
+            <div class="waiting-card">
+
+              <div class="waiting-indicator amber"></div>
+
+              <div class="waiting-content">
+
+                <span class="status-pill amber">WAITING · 1 DAY</span>
+
+                <h2>Final menu selection</h2>
+
+                <p>
+                  Marco & Chiara still need to choose the
+                  vegetarian starter.
+                </p>
+
+                <div class="waiting-source">
+                  <div class="mini-avatar green">MC</div>
+                  <span>Marco & Chiara</span>
+                </div>
+
+              </div>
+
+              <button class="small-button">
+                Follow up
+              </button>
+
+            </div>
+
+
+            <div class="waiting-card">
+
+              <div class="waiting-indicator"></div>
+
+              <div class="waiting-content">
+
+                <span class="status-pill blue">WAITING · 3 DAYS</span>
+
+                <h2>Contract signature</h2>
+
+                <p>
+                  Venue contract is waiting for the client
+                  signature.
+                </p>
+
+                <div class="waiting-source">
+                  <div class="mini-avatar">VS</div>
+                  <span>Villa Serena</span>
+                </div>
+
+              </div>
+
+              <button class="small-button">
+                Open
+              </button>
+
+            </div>
+
+          </div>
+
+
+          <aside class="waiting-summary">
+
+            <span class="eyebrow">SUMMARY</span>
+
+            <strong>5</strong>
+
+            <p>
+              open follow-ups
+            </p>
+
+            <div class="summary-divider"></div>
+
+            <div class="summary-line">
+              <span>Overdue</span>
+              <strong>2</strong>
+            </div>
+
+            <div class="summary-line">
+              <span>Due today</span>
+              <strong>1</strong>
+            </div>
+
+            <div class="summary-line">
+              <span>Upcoming</span>
+              <strong>2</strong>
+            </div>
+
+          </aside>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ================= TASKS ================= -->
+      <section id="view-tasks" class="view">
+
+        <div class="page-heading">
+
+          <div>
+            <div class="eyebrow">OPERATIONS</div>
+            <h1>Tasks</h1>
+            <p class="page-description">
+              Keep your projects moving.
+            </p>
+          </div>
+
+          <button class="primary-button">+ New task</button>
+
+        </div>
+
+
+        <div class="task-board">
+
+          <div class="task-column">
+
+            <div class="column-title">
+              <span>Today</span>
+              <span>4</span>
+            </div>
+
+            <div class="task-item high-task">
+              <div class="task-check"></div>
+              <div>
+                <strong>Confirm venue access time</strong>
+                <span>Giulia & Lorenzo</span>
+              </div>
+            </div>
+
+            <div class="task-item">
+              <div class="task-check"></div>
+              <div>
+                <strong>Follow up florist</strong>
+                <span>Giulia & Lorenzo</span>
+              </div>
+            </div>
+
+            <div class="task-item">
+              <div class="task-check"></div>
+              <div>
+                <strong>Send menu confirmation</strong>
+                <span>Marco & Chiara</span>
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="task-column">
+
+            <div class="column-title">
+              <span>This week</span>
+              <span>8</span>
+            </div>
+
+            <div class="task-item">
+              <div class="task-check"></div>
+              <div>
+                <strong>Finalize seating plan</strong>
+                <span>Marco & Chiara</span>
+              </div>
+            </div>
+
+            <div class="task-item">
+              <div class="task-check"></div>
+              <div>
+                <strong>Confirm transportation</strong>
+                <span>Giulia & Lorenzo</span>
+              </div>
+            </div>
+
+            <div class="task-item">
+              <div class="task-check"></div>
+              <div>
+                <strong>Review stationery proof</strong>
+                <span>Sofia & Matteo</span>
+              </div>
+            </div>
+
+          </div>
+
+
+          <div class="task-column">
+
+            <div class="column-title">
+              <span>Upcoming</span>
+              <span>6</span>
+            </div>
+
+            <div class="task-item">
+              <div class="task-check"></div>
+              <div>
+                <strong>Vendor briefing</strong>
+                <span>Giulia & Lorenzo</span>
+              </div>
+            </div>
+
+            <div class="task-item">
+              <div class="task-check"></div>
+              <div>
+                <strong>Print final timeline</strong>
+                <span>All projects</span>
+              </div>
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ================= TIMELINE ================= -->
+      <section id="view-timeline" class="view">
+
+        <div class="page-heading">
+
+          <div>
+            <div class="eyebrow">PLANNING</div>
+            <h1>Timeline</h1>
+            <p class="page-description">
+              Deadlines and milestones across your projects.
+            </p>
+          </div>
+
+          <div class="heading-actions">
+            <button class="outline-button">Month</button>
+            <button class="primary-button">+ Add</button>
+          </div>
+
+        </div>
+
+
+        <div class="timeline-card">
+
+          <div class="timeline-header">
+
+            <button class="calendar-arrow">←</button>
+
+            <strong>October 2026</strong>
+
+            <button class="calendar-arrow">→</button>
+
+          </div>
+
+
+          <div class="calendar-grid">
+
+            <div class="day-name">MON</div>
+            <div class="day-name">TUE</div>
+            <div class="day-name">WED</div>
+            <div class="day-name">THU</div>
+            <div class="day-name">FRI</div>
+            <div class="day-name">SAT</div>
+            <div class="day-name">SUN</div>
+
+            <div class="day muted">28</div>
+            <div class="day muted">29</div>
+            <div class="day muted">30</div>
+            <div class="day">1</div>
+            <div class="day">2</div>
+            <div class="day">3</div>
+            <div class="day">4</div>
+
+            <div class="day">5</div>
+            <div class="day">6</div>
+            <div class="day today">7</div>
+            <div class="day">8</div>
+            <div class="day event-day">
+              9
+              <span class="calendar-event blue-event">Venue call</span>
+            </div>
+            <div class="day">10</div>
+            <div class="day">11</div>
+
+            <div class="day">12</div>
+            <div class="day event-day">
+              13
+              <span class="calendar-event purple-event">Menu review</span>
+            </div>
+            <div class="day">14</div>
+            <div class="day">15</div>
+            <div class="day">16</div>
+            <div class="day">17</div>
+            <div class="day">18</div>
+
+            <div class="day">19</div>
+            <div class="day">20</div>
+            <div class="day event-day">
+              21
+              <span class="calendar-event">Floral approval</span>
+            </div>
+            <div class="day">22</div>
+            <div class="day">23</div>
+            <div class="day">24</div>
+            <div class="day">25</div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ================= DECISIONS ================= -->
+      <section id="view-decisions" class="view">
+
+        <div class="page-heading">
+
+          <div>
+            <div class="eyebrow">CONTEXT</div>
+            <h1>Decision log</h1>
+            <p class="page-description">
+              A clear history of what was decided and why.
+            </p>
+          </div>
+
+          <button class="primary-button">+ New decision</button>
+
+        </div>
+
+
+        <div class="decision-list">
+
+          <article class="decision-card">
+
+            <div class="decision-symbol">✓</div>
+
+            <div class="decision-main">
+
+              <div class="decision-meta">
+                7 October 2026 · Giulia & Lorenzo
+              </div>
+
+              <h2>Supplier access window confirmed</h2>
+
+              <p>
+                Confirmed new venue access from 10:30 after
+                discussion with Villa Serena.
+              </p>
+
+              <div class="decision-source">
+                Source · Email from Villa Serena
+              </div>
+
+            </div>
+
+            <span class="decision-status">CONFIRMED</span>
+
+          </article>
+
+
+          <article class="decision-card">
+
+            <div class="decision-symbol">✓</div>
+
+            <div class="decision-main">
+
+              <div class="decision-meta">
+                5 October 2026 · Sofia & Matteo
+              </div>
+
+              <h2>Live music package selected</h2>
+
+              <p>
+                Couple selected the acoustic trio package for
+                cocktail hour.
+              </p>
+
+              <div class="decision-source">
+                Source · Project conversation
+              </div>
+
+            </div>
+
+            <span class="decision-status">CONFIRMED</span>
+
+          </article>
+
+
+          <article class="decision-card">
+
+            <div class="decision-symbol pending">?</div>
+
+            <div class="decision-main">
+
+              <div class="decision-meta">
+                3 October 2026 · Marco & Chiara
+              </div>
+
+              <h2>Starter selection</h2>
+
+              <p>
+                Vegetarian starter still pending client confirmation.
+              </p>
+
+              <div class="decision-source">
+                Source · Email thread
+              </div>
+
+            </div>
+
+            <span class="decision-status pending-status">PENDING</span>
+
+          </article>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ================= DOCUMENTS ================= -->
+      <section id="view-documents" class="view">
+
+        <div class="page-heading">
+
+          <div>
+            <div class="eyebrow">FILES</div>
+            <h1>Documents</h1>
+            <p class="page-description">
+              Project documents and reference material.
+            </p>
+          </div>
+
+          <button class="primary-button">+ Upload</button>
+
+        </div>
+
+
+        <div class="document-toolbar">
+
+          <div class="document-search">
+            ⌕
+            <input placeholder="Search documents..." />
+          </div>
+
+          <button class="outline-button">All projects ▾</button>
+
+        </div>
+
+
+        <div class="document-table">
+
+          <div class="document-row header">
+
+            <span>Name</span>
+            <span>Project</span>
+            <span>Updated</span>
+            <span>Type</span>
+
+          </div>
+
+
+          <div class="document-row">
+
+            <div class="document-name">
+              <span class="file-icon pdf">PDF</span>
+              Venue contract.pdf
+            </div>
+
+            <span>Giulia & Lorenzo</span>
+            <span>Today, 10:42</span>
+            <span>PDF</span>
+
+          </div>
+
+
+          <div class="document-row">
+
+            <div class="document-name">
+              <span class="file-icon doc">DOC</span>
+              Timeline v4.docx
+            </div>
+
+            <span>Giulia & Lorenzo</span>
+            <span>Yesterday</span>
+            <span>DOCX</span>
+
+          </div>
+
+
+          <div class="document-row">
+
+            <div class="document-name">
+              <span class="file-icon xls">XLS</span>
+              Guest list.xlsx
+            </div>
+
+            <span>Marco & Chiara</span>
+            <span>2 days ago</span>
+            <span>XLSX</span>
+
+          </div>
+
+
+          <div class="document-row">
+
+            <div class="document-name">
+              <span class="file-icon pdf">PDF</span>
+              Floral proposal.pdf
+            </div>
+
+            <span>Giulia & Lorenzo</span>
+            <span>3 days ago</span>
+            <span>PDF</span>
+
+          </div>
+
+        </div>
+
+      </section>
+
+
+
+      <!-- ================= INBOX ================= -->
+      <section id="view-inbox" class="view">
+
+        <div class="page-heading">
+
+          <div>
+            <div class="eyebrow">COMMUNICATIONS</div>
+            <h1>Inbox</h1>
+            <p class="page-description">
+              Your project conversations, together.
+            </p>
+          </div>
+
+          <button class="primary-button">Compose</button>
+
+        </div>
+
+
+        <div class="inbox-layout">
+
+          <div class="conversation-list">
+
+            <div class="conversation active">
+
+              <div class="conversation-avatar">VS</div>
+
+              <div class="conversation-main">
+
+                <div class="conversation-top">
+                  <strong>Villa Serena</strong>
+                  <span>12 min</span>
+                </div>
+
+                <h3>Important update about supplier access</h3>
+
+                <p>
+                  We've had to move the access window...
+                </p>
+
+                <div class="conversation-tags">
+                  <span>Giulia & Lorenzo</span>
+                  <span class="unread">NEW</span>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="conversation">
+
+              <div class="conversation-avatar purple">LF</div>
+
+              <div class="conversation-main">
+
+                <div class="conversation-top">
+                  <strong>La Fleur</strong>
+                  <span>Yesterday</span>
+                </div>
+
+                <h3>Re: Floral arrangement</h3>
+
+                <p>
+                  Just checking whether you had a chance...
+                </p>
+
+                <div class="conversation-tags">
+                  <span>Giulia & Lorenzo</span>
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="conversation">
+
+              <div class="conversation-avatar green">MC</div>
+
+              <div class="conversation-main">
+
+                <div class="conversation-top">
+                  <strong>Marco & Chiara</strong>
+                  <span>Yesterday</span>
+                </div>
+
+                <h3>Menu choices</h3>
+
+                <p>
+                  We think the vegetarian starter...
+                </p>
+
+                <div class="conversation-tags">
+                  <span>Marco & Chiara</span>
+                </div>
+
+              </div>
+
+            </div>
+
+          </div>
+
+
+          <div class="conversation-view">
+
+            <div class="conversation-header">
+
+              <div class="conversation-person">
+
+                <div class="conversation-avatar">VS</div>
+
+                <div>
+                  <strong>Villa Serena</strong>
+                  <span>Giulia & Lorenzo</span>
+                </div>
+
+              </div>
+
+              <button class="more-button">•••</button>
+
+            </div>
+
+
+            <div class="message-area">
+
+              <div class="message-date">
+                TODAY · 10:48
+              </div>
+
+              <div class="message">
+
+                <div class="message-sender">
+                  Villa Serena
+                  <span>10:48</span>
+                </div>
+
+                <p>
+                  Hi Anna,<br><br>
+                  just a quick update on Saturday's setup.
+                  We've had to move the supplier access window
+                  from 09:00 to 10:30 due to another event
+                  finishing later than expected.
+                  <br><br>
+                  Please let us know if that works on your side.
+                </p>
+
+              </div>
+
+
+              <div class="ai-insight">
+
+                <div class="ai-insight-icon">✦</div>
+
+                <div>
+
+                  <strong>Orvea detected a potential impact</strong>
+
+                  <p>
+                    Catering setup was scheduled for 09:30.
+                    Review the timeline before replying.
+                  </p>
+
+                  <button class="text-button">
+                    Analyse impact →
+                  </button>
+
+                </div>
+
+              </div>
+
+            </div>
+
+
+            <div class="reply-box">
+
+              <textarea
+                placeholder="Write a reply..."
+              ></textarea>
+
+              <div class="reply-bottom">
+                <span>↗ Draft only · Nothing will be sent</span>
+                <button class="primary-button small">
+                  Prepare reply
+                </button>
+              </div>
+
+            </div>
+
+          </div>
+
+        </div>
+
+      </section>
+
+    </div>
+  </main>
+
+
+
+  <!-- AI Assistant -->
+  <aside id="assistantPanel" class="assistant-panel">
+
+    <div class="assistant-header">
+
+      <div>
+        <div class="assistant-title">
+          <span class="ai-sparkle">✦</span>
+          Orvea Assistant
+        </div>
+
+        <span class="assistant-subtitle">
+          Workspace intelligence
+        </span>
+      </div>
+
+      <button id="closeAssistant" class="close-assistant">
+        ×
+      </button>
+
+    </div>
+
+
+    <div class="assistant-body">
+
+      <div class="assistant-welcome">
+
+        <div class="assistant-big-icon">✦</div>
+
+        <h2>How can I help?</h2>
+
+        <p>
+          Ask about your projects, decisions, deadlines or
+          recent changes.
+        </p>
+
+      </div>
+
+
+      <div class="suggested-prompts">
+
+        <button>
+          What's changed today?
+        </button>
+
+        <button>
+          What am I waiting for?
+        </button>
+
+        <button>
+          Show me risky deadlines
+        </button>
+
+        <button>
+          What needs attention?
+        </button>
+
+      </div>
+
+    </div>
+
+
+    <div class="assistant-input">
+
+      <input
+        type="text"
+        placeholder="Ask anything about your workspace..."
+      />
+
+      <button>↑</button>
+
+    </div>
+
+  </aside>
+
+
+
+  <!-- Command palette -->
+  <div id="commandPalette" class="command-overlay">
+
+    <div class="command-modal">
+
+      <div class="command-input">
+        <span>⌕</span>
+        <input
+          id="commandInput"
+          autofocus
+          placeholder="Search projects, people, decisions..."
+        />
+        <kbd>ESC</kbd>
+      </div>
+
+
+      <div class="command-results">
+
+        <span class="command-label">QUICK ACCESS</span>
+
+        <button data-view-target="dashboard">
+          <span>⌂</span>
+          Dashboard
+        </button>
+
+        <button data-view-target="projects">
+          <span>▦</span>
+          Projects
+        </button>
+
+        <button data-view-target="changes">
+          <span>↯</span>
+          What changed?
+        </button>
+
+        <button data-view-target="waiting">
+          <span>◔</span>
+          What am I waiting for?
+        </button>
+
+        <span class="command-label">RECENT PROJECTS</span>
+
+        <button>
+          <span class="command-project black">G</span>
+          Giulia & Lorenzo
+        </button>
+
+        <button>
+          <span class="command-project blue">M</span>
+          Marco & Chiara
+        </button>
+
+      </div>
+
+    </div>
+
+  </div>
+
+
+  <script src="script.js"></script>
+
+</body>
+</html>
